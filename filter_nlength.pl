@@ -20,3 +20,7 @@ my $minlen = shift or die "Error: `minlen` parameter not provided\n";
 
 # How to use to filter
 # perl filter_nlength.pl 293 /Volumes/PBD/PCOS.PhD/PCOS_CH_7_14_16/split_fastq2/seqs.fna> /Volumes/PBD/PCOS.PhD/PCOS_CH_7_14_16/split_fastq2/seqs.293bp.fna
+
+
+# get a summary
+# cat /Volumes/PBD/PCOS.PhD/PCOS_CH_OM_6_20_16/split_fastq/seqs.lengthmax293.fna | grep '^>' | sed 's/_.*//' | sort  | uniq -c > /Volumes/PBD/PCOS.PhD/PCOS_CH_OM_6_20_16/split_fastq/seqs.lengthmax293.txt
