@@ -17,3 +17,6 @@ my $minlen = shift or die "Error: `minlen` parameter not provided\n";
     }
     local $/="\n";
 }
+
+# How to use to filter
+# perl filter_nlength.pl 293 /Volumes/PBD/PCOS.PhD/PCOS_CH_7_14_16/split_fastq2/seqs.fna> /Volumes/PBD/PCOS.PhD/PCOS_CH_7_14_16/split_fastq2/seqs.293bp.fna
