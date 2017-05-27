@@ -6,12 +6,12 @@ def splitfasta_file(fasta):
     count=0
     for line in fin:
         if line.startswith('>'):
-            fout=open(line[1:15]+"_genomic.tax.fna","w")
+            line=line.split('|')
+            fout=open("gi"+''+line[1]+"_genomic.tax.fna","w")
             count+=1
-            fout.write(line[0]+'NZ_'+line[4:12]+"|kraken:taxid|"+str(count)+" Candidatus Bacteroides periocalifornicus, "+'contig '+str(count)+'\n') # this was added to change the name of the fasta header but you can change it to simple fout.write(line) to simply write the fasta heaer in the original file
+            fout.write('>'+line[1]+' '+ line[4]) # this was added to change the name of the fasta header but you can change it to simple fout.write(line) to simply write the fasta heaer in the original file
         else:
             fout.write(line)
-            sfasta[header]= line
             if line.startswith('>'):
                 pass
     fout.close()
@@ -19,4 +19,4 @@ def splitfasta_file(fasta):
     print "There are "+str(count)+ " fasta headers" 
     return count
         
-splitfasta_file(fasta="/Volumes/Transcend/Candidatus_Bacteroides_periocalifornicus/LIIK01.1.fsa_nt")# change this to file desired
+# splitfasta_file(fasta="/Volumes/Transcend/Candidatus_Bacteroides_periocalifornicus/LIIK01.1.fsa_nt")# change this to file desired
