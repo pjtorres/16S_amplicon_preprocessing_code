@@ -1,4 +1,4 @@
-'''If you have a single fna file with multiple fasta within and want to split up into individual files for each fasta use this script. I modified it to change the name as well'''
+'''If you have a single fna file with multiple fasta within and want to split up into individual files for each fasta use this script. I modified it to change the header name as well'''
 #!usr/bin/env python  
 import os
 
