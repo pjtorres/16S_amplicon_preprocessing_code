@@ -1,4 +1,5 @@
 '''This script allows the merging of multiple blastn output files, while simultaneously allowing the addition of a zero to samples which did not recieve a hit found in other samples''' 
+
 import os
 
 
