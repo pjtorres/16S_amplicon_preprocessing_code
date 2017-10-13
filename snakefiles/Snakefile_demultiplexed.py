@@ -1,13 +1,10 @@
-#_author_= 'Pedro J. Torres  2017)
+#_author_= 'Pedro J. Torres  2017
 
-# Persephone Biome 16S pipeline. R1 reads. Make sure dependencies have been meet
+#  R1 reads. Make sure dependencies have been meet
 # and that you are inside a qiime environment
 
 rule all:#dont forget to add this, or else full dataset will not run!
     input:"rooted-tree.qza","demux.qzv","core-metrics-results","visualization/beta","visualization/alpha","visualization/taxa","taxonomy.qza"
-    #input:"rooted-tree.qza","demux.qzv","visualization/taxa-barplot.qzv","core-metrics-results","visualization/beta","visualization/alpha","taxonomy.qza"
-    #input:"taxa-barplot.qzv","demux.qzv","rep-seqs-dada2.qza","rooted-tree.qza","core-metrics-results","taxonomy.qza"
-#        ""
 
 ######################################
 ## Make qiime2 artifacts from R1 reads
