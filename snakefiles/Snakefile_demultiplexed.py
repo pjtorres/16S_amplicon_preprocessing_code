@@ -1,4 +1,6 @@
-#_author_= 'Pedro J. Torres  2017
+#_author_= 'Pedro J. Torres  2017'
+#qiime2-2017.9
+
 
 #  R1 reads. Make sure dependencies have been meet
 # and that you are inside a qiime environment
@@ -15,7 +17,7 @@ rule make_artifacts:
     output:
         "demux-single-end.qza"
     message:
-        "Welcome to the Persephone Biome 16S rRNA Pipeline. Make sure all your dependencies are meet and that you have all the proper files in their proper folder. If unsure look at the jupyter notebook tutorial."
+        " Make sure all your dependencies are meet and that you have all the proper files in their proper folder. If unsure look at the jupyter notebook tutorial."
     shell:
         "qiime tools import \
   --type 'SampleData[SequencesWithQuality]' \
@@ -132,7 +134,7 @@ rule alpha_beta_metrics:
     output:
         "core-metrics-results"
     shell:
-        "qiime diversity core-metrics \
+        "qiime diversity core-metrics-phylogenetic \
   --i-phylogeny {input.tree} \
   --i-table {input.table} \
   --p-sampling-depth 2500 \
@@ -198,3 +200,5 @@ rule taxa_barplot:
         --o-visualization visualization/taxa/taxa-barplot.qzv
 
         """
+
+
