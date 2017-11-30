@@ -71,6 +71,7 @@ for f in F:
         newfile= f.split('.')[0]+'_percent.csv'
         df=pandas.read_table(f, sep='\t')
         dft=(df.set_index('SampleID').T)
+        dft = dft.sort_values(colname, ascending=False)
         dft['Percent']= (dft[colname]/dft[colname].sum())*100
         dft.to_csv(newfile)
         os.remove(f)
