@@ -3,22 +3,20 @@ import argparse
 import os
 import pandas,numpy
 
-"""Script allows you to take in an output file from qiime2 barplots and split each
-sample into its own file with the raw counts in one row and the percent abudnance in another."""
+"""Script allows you to take in an output file from qiime2 barplots and split each sample into its own file with the raw counts in one row and the percent abundance in another."""
 
 #-----------Command Line Arguments-----------------
 parser=argparse.ArgumentParser(description="This script uses  numpy and pandas. Make sure both are installed. Script will make an individual file for each sample from a qiime2 barplot otput and give their raw counts and percent abudnances. - Pedro J. Torres")
 parser.add_argument('-i','--input', help=' Input csv file you want to split',required=True)
 args = parser.parse_args()
-csvfile=str(args.input) #name of fasta file want to change
+csvfile=str(args.input) 
 
 #---------Rearrange Taxa category to make it easier to parse-----
 print ('split script has started ...')
 fin=open(csvfile, 'rU')
 fout=open('temp1.csv','w+')
 header=fin.readline()
-fout.write('Taxa'+','+header[48:])
-
+fout.write('Taxa'+','+header[48:]) # the file given to me had tab delimeted headers for the k,p,c,o,f,g,s so this can be changed to suit your needs. If any issues I can help
 
 #This will re organize the file to make it easier to transform our data sicne K,P,C,O ECT.. are tab delimeted
 for line in fin:
@@ -30,8 +28,6 @@ for line in fin:
     taxabundance=(",".join(taxabundance))
     newline=taxa+'\t'+taxabundance
     fout.write(newline)
- 
-
 fout.close()
 fin.close()
 
