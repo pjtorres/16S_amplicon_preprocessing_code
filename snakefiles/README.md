@@ -13,18 +13,19 @@ extract_barcodes.py -f <file.fastq> \
 Now for the Snakefile in this directory to work we will rename our files and make a new directory. And change the name of your mappingfile  file
 
 ```bash
-  mv reads.fastq sequences.fastq
-  gzip sequences.fastq
+  mv reads.fastq sequences.fastq #Change name of reads.fastq file in the split_files/ folder after running the above code
+  
+  gzip sequences.fastq 
 
-   gzip barcodes.fastq 
+  gzip barcodes.fastq 
 
-  mkdir emp-single-end-sequences
+  mkdir emp-single-end-sequences # make this directory and move the sequences and barcodes file into this directory
 
   mv sequences.fastq.gz emp-single-end-sequences
 
   mv barcodes.fastq.gz emp-single-end-sequences
 
-  cp mapping_file.txt sample-metadata.tsv
+  cp mapping_file.txt sample-metadata.tsv #Change name of mapping file
 ```
 Now make sure the folder taxonomic_classifier is int the same directory.
 
