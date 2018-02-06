@@ -4,7 +4,7 @@
 # these are for files with foward reads and barcode file not demultiplexed yet
 
 rule all:#dont forget to add this, or else full dataset will not run!
-    input:"visualization/taxa-barplot.qzv","taxa-barplot.qzv","core-metrics-results","visualization/beta","visualization/alpha","taxonomy.qza"
+    input:"visualization/taxa-barplot.qzv","rep-seqs-dada2.qza","core-metrics-results","visualization/beta","visualization/alpha","taxonomy.qza"
 
 
 rule make_artifacts:
