@@ -1,4 +1,8 @@
-Recieve a single fastq file from core (no barcode file and not yet demultiplexed). Can follow example [here](https://forum.qiime2.org/t/problems-with-fastq-files-paired-end-without-barcode-file/960/2)
+Recieve a single fastq file from core (no barcode file and not yet demultiplexed). Can follow example [here](https://forum.qiime2.org/t/problems-with-fastq-files-paired-end-without-barcode-file/960/2). Will use Snakefile_barcode_seq_file.py but after downloading make sure you change the name of this file to Snakefile.
+
+```bash
+mv Snakefile_barcode_seq_file.py Snakefile
+```
 
 In short you will need to extract your barcodes from your singel fastq file. I used 12bp golay barcodes so I use this command in qiime1:
 
